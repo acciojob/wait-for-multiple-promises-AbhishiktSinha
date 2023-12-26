@@ -1,6 +1,6 @@
 //your JS code here. If required.
 const tableBody = document.getElementById('output');
-const loadingRow = tableBody.querySelector('#loading-row');
+const loadingRow = tableBody.querySelector('#loading');
 let totalTime = 0;
 let delay = 0;
 
@@ -50,8 +50,7 @@ function createTotalRow() {
 
 Promise.all([createDelayedResolvePromise(), createDelayedResolvePromise(), createDelayedResolvePromise()])
 .then((resultArray)=> {
-    loadingRow.classList.add('hide');
-
+    loadingRow.remove();
     console.log(resultArray);
 
     resultArray.forEach((timeObject, index)=>{
